@@ -1,0 +1,28 @@
+{
+  "name": "autofitcamera",
+  "version": "1.0.0",
+  "description": "react native camera 不能全屏充满容器的解决方案",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/25juan/AutoFitCamera.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "react-native-camera"
+  ],
+  "author": "sgellar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/25juan/AutoFitCamera/issues"
+  },
+  "homepage": "https://github.com/25juan/AutoFitCamera#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-native": "^0.59.8"
+  }
+}
