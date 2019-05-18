@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/25juan/AutoFitCamera#readme",
   "dependencies": {
-    "react": "^16.8.6",
-    "react-native": "^0.59.8"
+
   }
 }
