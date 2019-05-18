@@ -1,8 +1,8 @@
 {
-  "name": "autofitcamera",
-  "version": "1.0.0",
+  "name": "react-native-autofit",
+  "version": "0.0.1",
   "description": "react native camera 不能全屏充满容器的解决方案",
-  "main": "index.js",
+  "main": "react-native-aufit-camera.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
