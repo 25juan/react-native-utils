@@ -32,7 +32,15 @@ let { Alert,RNAlert } = Utils ;
 class App extends React.Component{
 
     showDailog = ()=>{
-        RNAlert.showAlert().then(idex=>alert(`${idex}`))
+        RNAlert.showAlert({
+            title:'消息',
+            content:"",
+            buttons:[{
+                        text:"取消",
+                        props:{}
+                   }]
+        
+        }).then(idex=>alert(`${idex}`))
     }
     
     render() {
@@ -58,6 +66,7 @@ class App extends React.Component{
 
     showDailog = ()=>{
         RNPicker.showPicker({
+                            title:'消息',
                             data:[{
                                 title:"成都"
                             },{
