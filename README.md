@@ -28,7 +28,7 @@ import { StyleUtils } from "react-native-utils";
 import React from "react" ;
 import { Text,View } from "react-native" ;
 import { Alert,RNAlert } from "react-native-utils";
-
+let { Alert,RNAlert } = Utils ;
 class App extends React.Component{
 
     showDailog = ()=>{
@@ -40,6 +40,37 @@ class App extends React.Component{
           <View>
              <Text onPress={this.showDialog}>点我显示对话框</Text>
              <Alert/>
+          </View>
+        );
+      }
+}
+
+```
+### 选择框(Picker)
+```
+import React from "react" ;
+import { Text,View } from "react-native" ;
+import Utils from "react-native-utils";
+
+let { Picker,RNPicker } = Utils ;
+
+class App extends React.Component{
+
+    showDailog = ()=>{
+        RNPicker.showPicker({
+                            data:[{
+                                title:"成都"
+                            },{
+                                title:"北京"
+                            }]
+                          }).then(obj=>console.log(obj))
+    }
+    
+    render() {
+        return (
+          <View>
+             <Text onPress={this.showDialog}>点我Picker框</Text>
+             <Picker/>
           </View>
         );
       }
