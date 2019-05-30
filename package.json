@@ -1,5 +1,5 @@
 {
-  "name": "react-native-autofit",
+  "name": "react-native-utils",
   "version": "0.0.1",
   "description": "react native camera 不能全屏充满容器的解决方案",
   "main": "index.js",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/25juan/AutoFitCamera#readme",
   "dependencies": {
-
+    "lodash": "^4.17.11",
+    "prop-types": "^15.7.2"
   }
 }

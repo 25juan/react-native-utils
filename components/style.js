@@ -1,0 +1,71 @@
+import { StyleSheet } from "react-native" ;
+import StyleUtils from "../react-native-autofit-size" ;
+import { greyColor,labelColor,dividerColor } from "./color" ;
+
+export default {
+    flex:{
+        flex:1,
+    },
+    alertContainer:{
+        flex:1,
+        justifyContent:'center',
+        paddingHorizontal:StyleUtils.getAutoSize(50),
+        backgroundColor:"rgba(0,0,0,0.4)"
+    },
+    alertCard:{
+        backgroundColor:"#fff",
+        borderRadius:4,
+    },
+    alertCardHeader:{
+        paddingVertical:StyleUtils.getAutoSize(16),
+    },
+    alertCardFooter:{
+        flexDirection:"row",
+        borderTopWidth:StyleSheet.hairlineWidth,
+        borderTopColor:dividerColor
+    },
+    alertCardHorizontal:{
+        paddingHorizontal:StyleUtils.getAutoSize(16),
+    },
+    alertCardTitle:{
+        color:labelColor,
+        fontSize:StyleUtils.getTextSize(16),
+        marginBottom:StyleUtils.getAutoSize(16),
+        textAlign:"center"
+    },
+    textAlignLeft:{
+        textAlign:"left"
+    },
+    alertContent:{
+        color:greyColor,
+        fontSize:StyleUtils.getTextSize(14),
+        textAlign:"center"
+    },
+    alertCardFooterButton:{
+        flex:1,
+        paddingVertical:StyleUtils.getAutoSize(14),
+    },
+    buttonText:{
+        fontSize:StyleUtils.getTextSize(14),
+        fontWeight:'700',
+        color:labelColor,
+        textAlign:"center"
+    },
+    rowItem:{
+        flexDirection:"row",
+        paddingVertical:StyleUtils.getAutoSize(8),
+    },
+    flatListContainer:{
+        maxHeight:StyleUtils.getAutoSize(200),
+    },
+    divider:{
+        borderTopWidth:StyleSheet.hairlineWidth,
+        borderTopColor:dividerColor
+    },
+    icon:{
+        height:StyleUtils.getAutoSize(20),
+        width:StyleUtils.getAutoSize(20),
+        resizeMode:"contain"
+    }
+
+}
