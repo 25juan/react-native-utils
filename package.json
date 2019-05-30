@@ -23,6 +23,7 @@
   "homepage": "https://github.com/25juan/AutoFitCamera#readme",
   "dependencies": {
     "lodash": "^4.17.11",
+    "axios": "^0.18.0",
     "prop-types": "^15.7.2"
   }
 }
