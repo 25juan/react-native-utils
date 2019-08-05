@@ -39,7 +39,8 @@ const ajax = async (url,method,data = {  })=>{
         method,
         ...o ,
     }).then(response=>response.data) ;
-};
+}
+}
 
 
 
