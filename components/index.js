@@ -4,20 +4,26 @@ import Picker, {RNPicker} from "./Picker" ;
 import Toast,{RNToast } from "./Toast";
 
 export let RNDialog = {
-    Alert:RNAlert,
-    Picker:RNPicker,
-    Toast:RNToast
+    Alert:null,
+    Picker:null,
+    Toast:null
 } ;
 
 export default class extends Component {
+    componentDidMount() {
+        RNDialog.Alert = require("./Alert").RNAlert ;
+        RNDialog.Picker = require("./Picker").RNPicker ;
+        RNDialog.Toast = require("./Toast").RNToast ;
+    }
+
     render(){
         let { alertProps={},pickerProps={},toastProps={}  } = this.props ;
         return (
             <>
-                <Alert { ...alertProps } />
-                <Picker { ...pickerProps } />
-                <Toast { ...toastProps } />
-            </>
-        )
+            <Alert { ...alertProps } />
+        <Picker { ...pickerProps } />
+        <Toast { ...toastProps } />
+        </>
+    )
     }
 }
