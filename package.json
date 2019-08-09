@@ -1,6 +1,6 @@
 {
   "name": "react-native-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "react native camera 不能全屏充满容器的解决方案",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   "dependencies": {
     "lodash": "^4.17.11",
     "axios": "^0.18.0",
+    "react-native-easy-toast": "^1.2.0",
     "prop-types": "^15.7.2"
   }
 }
