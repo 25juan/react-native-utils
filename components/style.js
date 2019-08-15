@@ -6,6 +6,9 @@ export default {
     flex:{
         flex:1,
     },
+    row:{
+        flexDirection:"row"
+    },
     alertContainer:{
         flex:1,
         justifyContent:'center',
@@ -73,21 +76,21 @@ export default {
         flexDirection: "row",
         alignItems: "center",
         paddingHorizontal: 30
-      },
-      loadingContentStyle: {
+    },
+    loadingContentStyle: {
         flexDirection: "row",
         backgroundColor: "#fff",
         padding: 15,
         flex: 1,
         borderRadius: 4,
         alignItems: "center"
-      },
-      loadingIndicatorStyle: {
+    },
+    loadingIndicatorStyle: {
         marginRight: 5
-      },
-      loadingTextStyle: {
+    },
+    loadingTextStyle: {
         fontSize: 16,
         color:"#999"
-      },
-    
+    },
+
 }

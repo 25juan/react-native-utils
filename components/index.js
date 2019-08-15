@@ -8,7 +8,8 @@ import { FlatListPicker } from "./FlatListPicker";
 export let RNDialog = {
     Alert:null,
     Picker:null,
-    Toast:null
+    Toast:null,
+    FlatListPicker:null,
 } ;
 
 export default class extends Component {
