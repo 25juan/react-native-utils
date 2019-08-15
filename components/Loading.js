@@ -5,7 +5,7 @@ const defaultText = "数据加载中，请稍后...";
 
 export let RNLoading = null ;
 
-export default class extends Component {
+export class Loading extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,12 +16,6 @@ export default class extends Component {
   
   componentDidMount() {
     RNLoading =  this ;
-  }
-
-  componentWillUnmount() {
-    if (this.timer) {
-      clearTimeout(this.timer);
-    }
   }
 
   /**
@@ -62,3 +56,4 @@ export default class extends Component {
     );
   }
 }
+export default Loading ;
