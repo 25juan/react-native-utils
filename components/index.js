@@ -17,18 +17,19 @@ export default class extends Component {
         RNDialog.Picker = require("./Picker").RNPicker ;
         RNDialog.Toast = require("./Toast").RNToast ;
         RNDialog.Loading = require("./Loading").RNLoading ;
+        RNDialog.FlatListPicker = require("./FlatListPicker").RNFlatPicker ;
     }
 
     render(){
         let { alertProps={},pickerProps={},toastProps={},loadingProps={},flatListPicker={} } = this.props ;
         return (
             <>
-            <Alert { ...alertProps } />
-            <Picker { ...pickerProps } />
-            <Toast { ...toastProps } />
-            <Loading { ...loadingProps }/>
-            <FlatListPicker { ...flatListPicker }/>
-        </>
-    )
+                <Alert { ...alertProps } />
+                <Picker { ...pickerProps } />
+                <Toast { ...toastProps } />
+                <Loading { ...loadingProps }/>
+                <FlatListPicker { ...flatListPicker }/>
+            </>
+        )
     }
 }
