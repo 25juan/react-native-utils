@@ -34,14 +34,25 @@ const ajax = async (url,method,data = {  })=>{
         o.params = { ...data } ;
     }else{
         o.data = { ...data } ;
-
+    }
+    let headers = {
+        "Content-Type":'text/plain',
+    } ;
+    const config = getAxiosConfig() ;
+    console.log(config)
     return await axios(url,{
         method,
         ...o ,
+        ...config,
     }).then(response=>response.data) ;
 }
+
+let _config = { };
+export const setAxiosConfig = function (config) {
+    _config = { ...config } ;
 }
-
-
+const getAxiosConfig = function () {
+    return _config ;
+}
 
 export default parseUrl ;
