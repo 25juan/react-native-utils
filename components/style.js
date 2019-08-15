@@ -66,6 +66,28 @@ export default {
         height:StyleUtils.getAutoSize(20),
         width:StyleUtils.getAutoSize(20),
         resizeMode:"contain"
-    }
-
+    },
+    loadingContainerStyle: {
+        flex: 1,
+        backgroundColor: "rgba(0,0,0,0.3)",
+        flexDirection: "row",
+        alignItems: "center",
+        paddingHorizontal: 30
+      },
+      loadingContentStyle: {
+        flexDirection: "row",
+        backgroundColor: "#fff",
+        padding: 15,
+        flex: 1,
+        borderRadius: 4,
+        alignItems: "center"
+      },
+      loadingIndicatorStyle: {
+        marginRight: 5
+      },
+      loadingTextStyle: {
+        fontSize: 16,
+        color:"#999"
+      },
+    
 }

@@ -39,6 +39,7 @@ const ajax = async (url,method,data = {  })=>{
         "Content-Type":'text/plain',
     } ;
     const config = getAxiosConfig() ;
+    console.log(config)
     return await axios(url,{
         method,
         ...o ,
