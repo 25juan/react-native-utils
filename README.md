@@ -45,7 +45,7 @@ class App extends React.Component{
                 text:"取消",
                 props:{}}]
         }).then(idex=>alert(`${idex}`)) ;
-        // icker 框调用    
+        // Picker 框调用    
         RNDialog
         .Picker
         .showPicker({
@@ -57,12 +57,12 @@ class App extends React.Component{
             }]
          }).then(obj=>console.log(obj));
          
-         // Toast 调用
+        // Toast 调用
         RNDialog
         .Toast
         .show("Toast 调用成功");
         
-         // Loading 调用
+        // Loading 调用
         RNDialog
         .Loading
         .show("数据加载中");
