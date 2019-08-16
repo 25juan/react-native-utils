@@ -110,9 +110,6 @@ export class FlatListPicker extends Component {
       iconStyle: { paddingHorizontal: 16, paddingVertical: 8 },
       underlayColor: "transparent"
     } ;
-
-    console.log(this.data);
-
     return (
       <Modal
           animationType="slide"
