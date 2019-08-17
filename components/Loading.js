@@ -36,7 +36,7 @@ export class Loading extends Component {
     this.setState({ ...config, visible: false });
   };
   render() {
-    let { loadingProps={},modalProps={} } = this.props;
+    let { loadingProps={  },modalProps={} } = this.props;
     return (
       <Modal
         transparent={true}
@@ -46,7 +46,11 @@ export class Loading extends Component {
       >
         <View style={Styles.loadingContainerStyle}>
           <View style={Styles.loadingContentStyle}>
-            <ActivityIndicator size={"small"} style={Styles.loadingIndicatorStyle} { ...loadingProps } />
+            {
+              loadingProps.renderLoading?loadingProps.renderLoading():(
+                  <ActivityIndicator size={"small"} style={Styles.loadingIndicatorStyle} { ...loadingProps } />
+              )
+            }
             <Text style={Styles.loadingTextStyle}>
               {this.state.text}
             </Text>
