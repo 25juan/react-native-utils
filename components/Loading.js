@@ -22,11 +22,8 @@ export class Loading extends Component {
    * @param config modal 框配置参数
    * @param time 自动关闭时间 为0 则不自动关闭
    */
-  show = (config = { text: defaultText }, time = 20000) => {
-    if (this.timer) {
-      clearTimeout(this.timer);
-    }
-    this.setState({ ...config, visible: true });
+  show = (text = defaultText) => {
+    this.setState({ text, visible: true });
   };
   /**
    * 隐藏loading框

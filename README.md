@@ -23,64 +23,69 @@ import { StyleUtils } from "react-native-utils";
         <Text style={{ fontSize:StyleUtils.getTextSize(14) }}/>
 </View
 ```
-### 对话框(Alert)
+### 工具组件API方式调用
 ```
-import React from "react" ;
+import React, { Component, lazy, Suspense } from "react";
 import { Text,View } from "react-native" ;
-import { Alert,RNAlert } from "react-native-utils";
-let { Alert,RNAlert } = Utils ;
-class App extends React.Component{
+import { Dialog,RNDialog } from "react-native-utils";
 
-    showDailog = ()=>{
-        RNAlert.showAlert({
+let Navigation = lazy(() => import("./navigation"));
+
+// 这儿通过 Suspense动态加载组件，等待Dialog渲染完成之后，
+// Navigation组件里面才能调用对话框组件API
+class App extends React.Component{
+    componentDidMount(){
+        // 调用弹框
+        RNDialog
+        .Alert
+        .showAlert({
             title:'消息',
             content:"",
             buttons:[{
-                        text:"取消",
-                        props:{}
-                   }]
+                text:"取消",
+                props:{}}]
+        }).then(idex=>alert(`${idex}`)) ;
+        // Picker 框调用    
+        RNDialog
+        .Picker
+        .showPicker({
+            title:'消息',
+            data:[{
+                title:"成都"
+               },{
+                title:"北京"
+            }]
+         }).then(obj=>console.log(obj));
+         
+        // Toast 调用
+        RNDialog
+        .Toast
+        .show("Toast 调用成功");
         
-        }).then(idex=>alert(`${idex}`))
+        // Loading 调用
+        RNDialog
+        .Loading
+        .show("数据加载中");
+        
+        // Loading 调用
+        RNDialog
+        .FlatListPicker
+        .show([{ label:"22",id:22 },{ label:"11",id:11 }]
+        ,[11]).then(result=>{
+            console.log(result);   
+        });
     }
-    
     render() {
         return (
-          <View>
-             <Text onPress={this.showDialog}>点我显示对话框</Text>
-             <Alert/>
-          </View>
-        );
-      }
-}
-
-```
-### 选择框(Picker)
-```
-import React from "react" ;
-import { Text,View } from "react-native" ;
-import Utils from "react-native-utils";
-
-let { Picker,RNPicker } = Utils ;
-
-class App extends React.Component{
-
-    showDailog = ()=>{
-        RNPicker.showPicker({
-                            title:'消息',
-                            data:[{
-                                title:"成都"
-                            },{
-                                title:"北京"
-                            }]
-                          }).then(obj=>console.log(obj))
-    }
-    
-    render() {
-        return (
-          <View>
-             <Text onPress={this.showDialog}>点我Picker框</Text>
-             <Picker/>
-          </View>
+          <>
+            <Suspense fallback={<Loading />}>
+                <Navigation
+                    ref={navigator => {
+                        NavigationService.setTopLevelNavigator(navigator);
+                    }}/>
+            </Suspense>
+            <Dialog />
+          </>
         );
       }
 }
