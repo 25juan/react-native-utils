@@ -61,8 +61,8 @@ export class Picker extends Component{
                 transparent={true}
                 animationType={"fade"}
                 visible={this.state.visible}>
-                <View style={Styles.alertContainer}>
-                    <TouchableOpacity onPress={this.hidePicker} style={Styles.alertCard}>
+                <TouchableOpacity onPress={this.hidePicker} style={Styles.alertContainer}>
+                    <View onPress={this.hidePicker} style={Styles.alertCard}>
                         <View style={Styles.alertCardHeader}>
                             <View style={Styles.alertCardHorizontal}>
                                 <Text style={[Styles.alertCardTitle,Styles.textAlignLeft]}>{ this.state.title }</Text>
@@ -74,8 +74,8 @@ export class Picker extends Component{
                                           data={this.state.data}/>
                             </View>
                         </View>
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
             </Modal>
         )
     }
