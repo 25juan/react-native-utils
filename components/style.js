@@ -99,7 +99,6 @@ export default {
         height: 32,
         paddingVertical: 2,
         fontSize: 14,
-        color: "#333",
-        textAlignVertical: 'top'
+        color: "#333"
     }
 }
