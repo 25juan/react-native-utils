@@ -92,5 +92,14 @@ export default {
         fontSize: 16,
         color:"#999"
     },
-
+    textInputStyle: {
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: dividerColor,
+        borderRadius: 4,
+        height: 32,
+        paddingVertical: 2,
+        fontSize: 14,
+        color: "#333",
+        textAlignVertical: 'top'
+    }
 }

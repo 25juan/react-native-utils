@@ -4,6 +4,7 @@ import Picker, {RNPicker} from "./Picker" ;
 import Toast,{RNToast } from "./Toast";
 import Loading,{ RNLoading } from "./Loading" ;
 import { FlatListPicker } from "./FlatListPicker";
+import { AlertInput } from "./AlertInput";
 
 export let RNDialog = {
     Alert:null,
@@ -19,10 +20,11 @@ export default class extends Component {
         RNDialog.Toast = require("./Toast").RNToast ;
         RNDialog.Loading = require("./Loading").RNLoading ;
         RNDialog.FlatListPicker = require("./FlatListPicker").RNFlatPicker ;
+        RNDialog.AlertInput = require("./AlertInput").RNAlertInput ;
     }
 
     render(){
-        let { alertProps={},pickerProps={},toastProps={},loadingProps={},flatListPicker={} } = this.props ;
+        let { alertInputProps={},alertProps={},pickerProps={},toastProps={},loadingProps={},flatListPicker={} } = this.props ;
         return (
             <>
                 <Alert { ...alertProps } />
@@ -30,6 +32,7 @@ export default class extends Component {
                 <Toast { ...toastProps } />
                 <Loading { ...loadingProps }/>
                 <FlatListPicker { ...flatListPicker }/>
+                <AlertInput { ...alertInputProps }/>
             </>
         )
     }
