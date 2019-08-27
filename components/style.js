@@ -32,8 +32,8 @@ export default {
     },
     alertCardTitle:{
         color:labelColor,
-        fontSize:StyleUtils.getTextSize(16),
-        marginBottom:StyleUtils.getAutoSize(16),
+        fontSize:StyleUtils.getTextSize(18),
+        marginBottom:StyleUtils.getAutoSize(18),
         textAlign:"center"
     },
     textAlignLeft:{
@@ -41,7 +41,7 @@ export default {
     },
     alertContent:{
         color:greyColor,
-        fontSize:StyleUtils.getTextSize(14),
+        fontSize:StyleUtils.getTextSize(16),
         textAlign:"center"
     },
     alertCardFooterButton:{
