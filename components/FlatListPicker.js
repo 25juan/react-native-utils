@@ -13,6 +13,7 @@ export class FlatListPicker extends Component {
       visible: false,
       search:"",
       data:[],
+      type:"radio", // 单选
       selected:[]
     };
   }
@@ -27,9 +28,10 @@ export class FlatListPicker extends Component {
    * @param time 自动关闭时间 为0 则不自动关闭
    * dataSource 数据格式 [{ label:"22",id:22 },{ label:"11",id:11 }]
    */
-  show = (dataSource=[],selected=[]) => {
-    this.dataSource = dataSource ;
-    this.setState({ visible: true,selected });
+  show = (config = {}) => {
+    let { dataSource,...state } = config ;
+    this.dataSource = config.dataSource || [] ;
+    this.setState({ visible: true, ...state });
     return new Promise((resolve, reject)=>{
       this.resolve = resolve ;
     });
@@ -52,9 +54,6 @@ export class FlatListPicker extends Component {
     if(!search){
       return [ ...this.dataSource ] ;
     }
-    console.log(this.dataSource.filter(item=>{
-      return item.label.indexOf(search) !== -1
-    }))
     return this.dataSource.filter(item=>{
       return item.label.indexOf(search) !== -1
     });
@@ -69,13 +68,18 @@ export class FlatListPicker extends Component {
   onItemPress = (index)=>{
     let item = this.data[index] ;
     let selected = this.state.selected ;
+    let type = this.state.type ;
     let id = item.id ;
     let isSelected = this.isSelected(item) ;
     if(isSelected){
       let idx = selected.indexOf(id) ;
       selected.splice(idx,1) ;
     }else{
-      selected.push(id);
+      if(type === "radio"){ // 单选
+        this.state.selected = [ id ];
+      }else{
+        selected.push(id);
+      }
     }
     this.setState(this.state) ;
   };
