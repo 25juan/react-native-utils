@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { View, Text, Modal, ActivityIndicator, FlatList, } from "react-native";
+import { View, Text, Modal, ActivityIndicator,SafeAreaView, FlatList, } from "react-native";
 import Styles from "./style" ;
-import { SearchBar,ListItem,Icon,Divider } from "react-native-elements"
+import { SearchBar,ListItem,Icon,Divider,Header } from "react-native-elements"
 import navigation from "../../../src/navigation/NService";
 
 export let RNFlatPicker = null ;
@@ -16,7 +16,7 @@ export class FlatListPicker extends Component {
       selected:[]
     };
   }
-  
+
   componentDidMount() {
     RNFlatPicker =  this ;
   }
@@ -111,33 +111,33 @@ export class FlatListPicker extends Component {
       underlayColor: "transparent"
     } ;
     return (
-      <Modal
-          animationType="slide"
-        transparent={false}
-        onRequestClose={this.hide}
-        visible={this.state.visible}
-        {...modalProps}>
-        <View style={Styles.flex}>
-          <View style={[Styles.row,{ alignItems:'center' }]}>
-            <Icon { ...iconProps }/>
-            <View style={Styles.flex}>
-              <SearchBar placeholder="数据检索"
-                         containerStyle={{ backgroundColor:'transparent',borderBottomWidth:0 }}
-                         inputContainerStyle={{ backgroundColor:'rgb(240,240,240)' }}
-                         { ...searchBarProps }
-                         onChangeText={this.searchData}
-                         lightTheme={true}
-                         value={this.state.search}/>
+        <Modal
+            animationType="slide"
+            transparent={false}
+            onRequestClose={this.hide}
+            visible={this.state.visible}
+            {...modalProps}>
+          <SafeAreaView style={Styles.flex}>
+            <View style={[Styles.row,{ alignItems:'center' }]}>
+              <Icon { ...iconProps }/>
+              <View style={Styles.flex}>
+                <SearchBar placeholder="数据检索"
+                           containerStyle={{ backgroundColor:'transparent',borderBottomWidth:0,borderTopWidth:0 }}
+                           inputContainerStyle={{ backgroundColor:'rgb(240,240,240)' }}
+                           { ...searchBarProps }
+                           onChangeText={this.searchData}
+                           lightTheme={true}
+                           value={this.state.search}/>
+              </View>
             </View>
-          </View>
-          <Divider  style={{ backgroundColor: 'rgb(240,240,240)' }} />
-          <FlatList
-              renderItem={this.renderItem}
-              keyExtractor={item=>`${item.id}`}
-              { ...flatListProps }
-              data={[ ...this.data ]}/>
-        </View>
-      </Modal>
+            <Divider  style={{ backgroundColor: 'rgb(240,240,240)' }} />
+            <FlatList
+                renderItem={this.renderItem}
+                keyExtractor={item=>`${item.id}`}
+                { ...flatListProps }
+                data={[ ...this.data ]}/>
+          </SafeAreaView>
+        </Modal>
     );
   }
 }
