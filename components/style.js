@@ -56,6 +56,7 @@ export default {
     },
     rowItem:{
         flexDirection:"row",
+        alignItems:'center',
         paddingVertical:StyleUtils.getAutoSize(8),
     },
     flatListContainer:{
@@ -66,8 +67,8 @@ export default {
         borderTopColor:dividerColor
     },
     icon:{
-        height:StyleUtils.getAutoSize(20),
-        width:StyleUtils.getAutoSize(20),
+        height:StyleUtils.getAutoSize(15),
+        width:StyleUtils.getAutoSize(15),
         resizeMode:"contain"
     },
     loadingContainerStyle: {
