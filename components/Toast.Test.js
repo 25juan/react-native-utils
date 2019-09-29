@@ -13,20 +13,20 @@ import {
     Image,
     Animated,
 } from 'react-native';
-import Asset from "../asset" ;
+import Asset from "./asset" ;
 
 const animateValue = new Animated.Value(0) ;
 
 let defaultState = {
     text : '数刷新据成功', // toast 显示的文本
-    duration:300, // 定义多少秒之后关闭
-    showDuration:2000,// 定义显示多少秒之后关闭
+    duration:100, // 定义动画时长
+    showduration:2000,// 定义显示多少秒之后关闭
     element:null, // toast的子元素
     containerStyle:{},
     textStyle:{  },
     bottom:false,
 }
-let  toast = null ;
+export let  toast = null ;
 class Toast extends React.Component {
     visible  = false ;
     state = { ...defaultState };
@@ -37,6 +37,9 @@ class Toast extends React.Component {
 
     show = (option)=>{
         if(this.visible){
+            this.hide(()=>{
+                this.show(option);
+            });
             return ;
         }
         let config = { ...defaultState } ;
@@ -48,15 +51,18 @@ class Toast extends React.Component {
 
         this.setState({ ...config },()=>{
             this.animate(true,()=>{
-                setTimeout(()=>{
+                this.closeTimer = setTimeout(()=>{
                     this.hide();
-                },this.state.showDuration) ;// 显示多少秒之后自动关闭
+                },this.state.showduration) ;// 显示多少秒之后自动关闭
             });
         });
     };
 
-    hide = ()=>{
-        this.animate(false)
+    hide = (callback)=>{
+        if(this.closeTimer){
+            clearTimeout(this.closeTimer) ;
+        }
+        this.animate(false,callback)
     };
 
     animate = (visible,callback=()=>{} )=>{
