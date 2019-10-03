@@ -4,7 +4,7 @@ import Picker, {RNPicker} from "./Picker" ;
 import Toast,{RNToast } from "./Toast";
 import Loading,{ RNLoading } from "./Loading" ;
 import { FlatListPicker } from "./FlatListPicker";
-
+import RootSiblings from 'react-native-root-siblings';
 export let RNDialog = {
     Alert:null,
     Picker:null,
@@ -12,7 +12,7 @@ export let RNDialog = {
     FlatListPicker:null,
 } ;
 
-export default class extends Component {
+export default class Dialog extends Component {
     componentDidMount() {
         RNDialog.Alert = require("./Alert").RNAlert ;
         RNDialog.Picker = require("./Picker").RNPicker ;
@@ -34,3 +34,4 @@ export default class extends Component {
         )
     }
 }
+new RootSiblings(<Dialog/>);
