@@ -74,6 +74,21 @@ class App extends React.Component{
         ,[11]).then(result=>{
             console.log(result);   
         });
+        
+        // AlertInput 调用
+        RNDialog.AlertInput.showAlert({
+                    title:"修改",
+                    content:"修改您的昵称",
+                    inputProps:{
+                        multiline:true,
+                        style:{
+                            height:50
+                        }
+                    }
+                }).then((obj)=>{
+                    console.log(obj)
+                })
+        
     }
     render() {
         return (

@@ -30,7 +30,10 @@ export class Loading extends Component {
    * @param config
    */
   hide = (config = {}) => {
-    this.setState({ ...config, visible: false });
+    setTimeout(()=>{ // ios要延迟操作才能关闭loading框
+      this.setState({ ...config, visible: false });
+    },700)
+
   };
   render() {
     let { loadingProps={  },modalProps={} } = this.props;

@@ -32,8 +32,8 @@ export default {
     },
     alertCardTitle:{
         color:labelColor,
-        fontSize:StyleUtils.getTextSize(16),
-        marginBottom:StyleUtils.getAutoSize(16),
+        fontSize:StyleUtils.getTextSize(18),
+        marginBottom:StyleUtils.getAutoSize(18),
         textAlign:"center"
     },
     textAlignLeft:{
@@ -41,7 +41,7 @@ export default {
     },
     alertContent:{
         color:greyColor,
-        fontSize:StyleUtils.getTextSize(14),
+        fontSize:StyleUtils.getTextSize(16),
         textAlign:"center"
     },
     alertCardFooterButton:{
@@ -56,6 +56,7 @@ export default {
     },
     rowItem:{
         flexDirection:"row",
+        alignItems:'center',
         paddingVertical:StyleUtils.getAutoSize(8),
     },
     flatListContainer:{
@@ -66,8 +67,8 @@ export default {
         borderTopColor:dividerColor
     },
     icon:{
-        height:StyleUtils.getAutoSize(20),
-        width:StyleUtils.getAutoSize(20),
+        height:StyleUtils.getAutoSize(15),
+        width:StyleUtils.getAutoSize(15),
         resizeMode:"contain"
     },
     loadingContainerStyle: {
@@ -92,5 +93,13 @@ export default {
         fontSize: 16,
         color:"#999"
     },
-
+    textInputStyle: {
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: dividerColor,
+        borderRadius: 4,
+        height: 32,
+        paddingVertical: 2,
+        fontSize: 14,
+        color: "#333"
+    }
 }

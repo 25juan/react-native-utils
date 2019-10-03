@@ -1,4 +1,4 @@
-import axios from "axios" ;
+import _axios from "axios" ;
 import _ from "lodash" ;
 /**
  *
@@ -39,19 +39,20 @@ const ajax = async (url,method,data = {  })=>{
         "Content-Type":'text/plain',
     } ;
     const config = getAxiosConfig() ;
-    return await axios(url,{
+    return await _axios(url,{
         method,
         ...o ,
         ...config,
     }).then(response=>response.data) ;
-}
+};
 
 let _config = { };
 export const setAxiosConfig = function (config) {
     _config = { ...config } ;
-}
+};
 const getAxiosConfig = function () {
     return _config ;
-}
+};
+export const axios = _axios ;
 
 export default parseUrl ;

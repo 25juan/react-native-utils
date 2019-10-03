@@ -6,11 +6,11 @@ import { RNToast,Toast } from "./components/Toast";
 import { RNLoading,Loading } from "./components/Loading";
 import Dialog,{ RNDialog } from "./components";
 import { storage,memory } from "./cache" ;
-import parseUrl,{ setAxiosConfig } from "./http" ;
+import parseUrl,{ setAxiosConfig,axios } from "./http" ;
 
 
 export { storage,memory } from "./cache" ;
-export parseUrl,{ setAxiosConfig } from "./http" ;
+export parseUrl,{ setAxiosConfig,axios } from "./http" ;
 export Dialog from "./components" ;
 export { RNAlert,Alert } from "./components/Alert" ;
 export { RNPicker,Picker } from "./components/Picker" ;
@@ -27,5 +27,5 @@ export default {
     RNLoading,Loading,
     Dialog,RNDialog,
     FillToAspectRatio,StyleUtils,
-    storage,memory,parseUrl,setAxiosConfig
+    storage,memory,parseUrl,setAxiosConfig,axios
 }
