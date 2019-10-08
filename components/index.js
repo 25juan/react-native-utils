@@ -4,7 +4,6 @@ import Picker, {RNPicker} from "./Picker" ;
 import Toast,{RNToast } from "./Toast";
 import Loading,{ RNLoading } from "./Loading" ;
 import { FlatListPicker } from "./FlatListPicker";
-import RootSiblings from 'react-native-root-siblings';
 import { AlertInput } from "./AlertInput";
 export let RNDialog = {
     Alert:null,
