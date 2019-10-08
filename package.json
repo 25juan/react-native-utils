@@ -25,7 +25,6 @@
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
-    "react-native-easy-toast": "^1.2.0",
-    "react-native-root-siblings": "^4.0.0-beta.3"
+    "react-native-easy-toast": "^1.2.0"
   }
 }

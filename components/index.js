@@ -37,4 +37,4 @@ export default class Dialog extends Component {
         )
     }
 }
-new RootSiblings(<Dialog/>);
+export default Dialog ;
