@@ -61,7 +61,7 @@ export class Picker extends Component{
                 transparent={true}
                 animationType={"fade"}
                 visible={this.state.visible}>
-                <TouchableOpacity onPress={this.hidePicker} style={Styles.alertContainer}>
+                <TouchableOpacity activeOpacity={1} onPress={this.hidePicker} style={Styles.alertContainer}>
                     <View onPress={this.hidePicker} style={Styles.alertCard}>
                         <View style={Styles.alertCardHeader}>
                             <View style={Styles.alertCardHorizontal}>
