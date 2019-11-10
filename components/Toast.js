@@ -15,7 +15,6 @@ import {
     Animated,
 } from 'react-native';
 import Asset from "../asset" ;
-
 const animateValue = new Animated.Value(1) ;
 
 let defaultState = {
@@ -83,7 +82,7 @@ export class Toast extends React.Component {
      */
     success  =(text,config ={})=>{
         this.show({
-            element:<><Image style={ [styles.imgIcon,styles.successIcon] } source={Asset.success}/><Text>{ text }</Text></>,
+            element:<><Image style={ [styles.imgIcon,styles.successIcon] } source={Asset.success}/><Text style={[this.textStyle,styles.colorToastTextStyle ]}>{ text }</Text></>,
             containerStyle:[styles.successToastContainerStyle,styles.commonIconToastContainerStyle],
             ...config
         })
@@ -91,7 +90,7 @@ export class Toast extends React.Component {
 
     info  =(text,config={})=>{
         this.show({
-            element:<><Image style={ [styles.imgIcon,styles.infoIcon] } source={Asset.info}/><Text>{ text }</Text></>,
+            element:<><Image style={ [styles.imgIcon,styles.infoIcon] } source={Asset.info}/><Text style={[this.textStyle,styles.colorToastTextStyle ]}>{ text }</Text></>,
             containerStyle:[styles.infoToastContainerStyle,styles.commonIconToastContainerStyle],
             ...config
         });
@@ -99,7 +98,7 @@ export class Toast extends React.Component {
 
     error = (text,config={})=>{
         this.show({
-            element:<><Image style={ [styles.imgIcon,styles.errorIcon] } source={Asset.close}/><Text>{ text }</Text></>,
+            element:<><Image style={ [styles.imgIcon,styles.errorIcon] } source={Asset.close}/><Text style={[this.textStyle,styles.colorToastTextStyle ]}>{ text }</Text></>,
             containerStyle:[styles.errorToastContainerStyle,styles.commonIconToastContainerStyle],
             ...config
         });
@@ -107,7 +106,7 @@ export class Toast extends React.Component {
 
 
     get containerStyle(){
-        let style = this.state.bottom ?{ paddingBottom:100,justifyContent:'flex-end', }:{ paddingTop:100,justifyContent:'flex-start', } ;
+        let style = this.state.bottom ?{ bottom:100 }:{ top:100, } ;
         return [ styles.toastContainerStyle,style,this.state.wrapperStyle  ];
     }
 
@@ -137,17 +136,17 @@ const styles = StyleSheet.create({
     toastContainerStyle:{
         position:'absolute',
         left:0,
-        top:0,
         zIndex:99,
         alignItems:'center',
         backgroundColor:'transparent',
         width:'100%',
-        height:'100%',
-        paddingHorizontal:15,
+        paddingHorizontal:16,
     },
     wrapperStyle:{
-        paddingVertical:4,
+        paddingVertical:16,
+        justifyContent:'center',
         paddingHorizontal:10,
+        width:"100%",
         alignItems:'center',
         backgroundColor:'rgba(0,0,0,0.65)',
         borderColor:'transparent',
@@ -164,38 +163,41 @@ const styles = StyleSheet.create({
     },
     toastTextStyle:{
         color:'#fff',
-        fontSize:15,
+        fontSize:18,
     },
     imgIcon:{
-        height:15,
-        width:15,
+        height:18,
+        width:18,
         resizeMode:'contain',
-        marginRight:5,
+        marginRight:6,
     },
     commonIconToastContainerStyle:{
-        justifyContent:'flex-start'
+
     },
     successIcon:{
         tintColor:'#52c41a',
     },
     successToastContainerStyle:{
-        backgroundColor:'#f6ffed',
-        borderColor:'#b7eb8f',
+        backgroundColor:'#DEF3FF',
+        borderColor:'#DEF3FF',
     },
 
     infoIcon:{
         tintColor:'#1890ff',
     },
     infoToastContainerStyle:{
-        backgroundColor:'#e6f7ff',
-        borderColor:'#91d5ff',
+        backgroundColor:'#DEF3FF',
+        borderColor:'#DEF3FF',
     },
     errorIcon:{
         tintColor:'#f5222d',
     },
     errorToastContainerStyle:{
-        backgroundColor:'#fff1f0',
-        borderColor:'#ffa39e',
+        backgroundColor:'#DEF3FF',
+        borderColor:'#DEF3FF',
+    },
+    colorToastTextStyle:{
+        color: "#333"
     },
 });
 
