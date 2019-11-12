@@ -15,6 +15,7 @@ import {
     Animated,
 } from 'react-native';
 import Asset from "../asset" ;
+import StyleUtils from "../react-native-autofit-size" ;
 const animateValue = new Animated.Value(1) ;
 
 let defaultState = {
@@ -163,7 +164,7 @@ const styles = StyleSheet.create({
     },
     toastTextStyle:{
         color:'#fff',
-        fontSize:18,
+        fontSize:StyleUtils.getTextSize(16),
     },
     imgIcon:{
         height:18,
