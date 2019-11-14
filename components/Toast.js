@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:16,
     },
     wrapperStyle:{
-        paddingVertical:16,
+        paddingVertical:8,
         justifyContent:'center',
         paddingHorizontal:10,
         width:"100%",
