@@ -29,11 +29,14 @@ export class Loading extends Component {
    * 隐藏loading框
    * @param config
    */
-  hide = (config = {}) => {
-    setTimeout(()=>{ // ios要延迟操作才能关闭loading框
+  hide = (config = {},immediatelyClose) => {
+    if(immediatelyClose){
       this.setState({ ...config, visible: false });
-    },700)
-
+    }else{
+      setTimeout(()=>{ // ios要延迟操作才能关闭loading框
+        this.setState({ ...config, visible: false });
+      },700)
+    }
   };
   render() {
     let { loadingProps={  },modalProps={} } = this.props;
