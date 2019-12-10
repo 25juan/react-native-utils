@@ -22,7 +22,7 @@ function compile(str,obj){
     Object.keys(obj).map(item=>{
         let reg = new RegExp(`{${item}}`,"g") ;
         str = str.replace(reg,obj[item]) ;
-    })
+    });
     return str ;
 }
 /**
