@@ -18,6 +18,13 @@ const parseUrl = (prefix="",urls={ })=>{
     });
     return urls ;
 };
+function compile(str,obj){
+    Object.keys(obj).map(item=>{
+        let reg = new RegExp(`{${item}}`,"g") ;
+        str = str.replace(reg,obj[item]) ;
+    })
+    return str ;
+}
 /**
  * ajax 请求工具类
  * @param url
@@ -26,9 +33,8 @@ const parseUrl = (prefix="",urls={ })=>{
  * @returns {Promise.<*>}
  */
 const ajax = async (url,method,data = {  })=>{
-    url = _.template(url, {
-        interpolate: /{([\s\S]+?)}/g,
-    })(data); // 将restful 里面的参数给替换掉
+    url = compile(url, data); // 将restful 里面的参数给替换掉
+
     let o = {};
     if(method === "get"){
         o.params = { ...data } ;
@@ -39,11 +45,12 @@ const ajax = async (url,method,data = {  })=>{
         "Content-Type":'text/plain',
     } ;
     const config = getAxiosConfig() ;
+
     return await _axios(url,{
         method,
         ...o ,
         ...config,
-    }).then(response=>response.data) ;
+    }).then(response=>response.data);
 };
 
 let _config = { };
