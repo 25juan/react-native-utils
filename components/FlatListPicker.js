@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, Modal, ActivityIndicator,SafeAreaView, FlatList, } from "react-native";
 import Styles from "./style" ;
 import { SearchBar,ListItem,Icon,Divider,Header } from "react-native-elements"
-import navigation from "../../../src/navigation/NService";
+
 
 export let RNFlatPicker = null ;
 
