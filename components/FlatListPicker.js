@@ -107,14 +107,6 @@ export class FlatListPicker extends Component {
 
     render() {
         let { modalProps={},flatListProps={},searchBarProps={} } = this.props;
-        let iconProps = {
-            name: "md-arrow-back",
-            type: "ionicon",
-            onPress: this.hide,
-            color: "#333",
-            iconStyle: { paddingHorizontal: 16, paddingVertical: 8 },
-            underlayColor: "transparent"
-        } ;
         return (
             <Modal
                 animationType="slide"
